@@ -6,20 +6,28 @@ export default defineConfig({
   },
   layout: {},
   routes: [
-    { path: '/', component: '@/pages/index', redirect: '/user' },
     {
       path: '/',
+      component: '@/pages/index',
+      name: '首页',
+      icon: 'crown',
+      access: 'isAdmin',
+    },
+    {
+      path: '/user',
       component: '@/layouts/index',
+      name: '用户',
+      access: 'isAdmin',
       routes: [
         {
-          path: '/user',
+          path: 'all',
+          name: '用户首页',
           component: '@/pages/user/index',
-          wrappers: [
-            '@/wrappers/auth'
-          ]
-        }
-      ]
-    }
+          access: 'isAdmin',
+          wrappers: ['@/wrappers/auth'],
+        },
+      ],
+    },
   ],
   mfsu: {},
   fastRefresh: {},
