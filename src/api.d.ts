@@ -6,8 +6,16 @@ declare namespace API {
 
   interface IUser {
     id: number;
-    name: string;
+    username: string;
     password?: string;
     role?: IRole;
+  }
+  interface UserList {
+    data?: IUser[];
+    success: boolean;
+  }
+  interface PageParams {
+    pageSize: number;
+    current: number;
   }
 }

@@ -1,16 +1,10 @@
-import {ReactNode} from "react";
+import { ProLayout } from '@ant-design/pro-layout';
+import React, { ReactNode } from 'react';
 
 interface IProps {
-  children?: ReactNode
+  children?: ReactNode;
 }
 
-const Index = (props: IProps) => {
-  return (
-    <>
-      <h2>layout</h2>
-      {props.children}
-    </>
-  )
-}
-
-export default Index;
+export default (props: IProps) => {
+  return <>{props.children}</>;
+};
